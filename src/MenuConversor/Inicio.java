@@ -8,35 +8,35 @@ import ConversorTemperatura.CalculosTemperatura;
 public class Inicio {
 
 	public static void main(String[] args) {
-
-		String opcion = (JOptionPane.showInputDialog(null, "Seleccione el tipo de conversor", "Conversor",
-				JOptionPane.PLAIN_MESSAGE, null, new Object[] { "Conversor de moneda", "Conversor de Temperatura" },
-				"selecciopna")).toString();
 		
-		String dato = JOptionPane.showInputDialog(null, "Ingrese la cantidad que desea convertir");
+		int inicio = 0;
+		
+		while(inicio==0) {
+			
+			String seleccion = (JOptionPane.showInputDialog(null, "Seleccione el tipo de conversor", "Conversor",
+					JOptionPane.PLAIN_MESSAGE, null, new Object[] { "Conversor de moneda", "Conversor de Temperatura" },
+					"selecciopna")).toString();
 
-		if (opcion == "Conversor de moneda") {
-			
-			MetodosMonedas conversorMonedas = new MetodosMonedas();
-			conversorMonedas.setValor(dato);
-			conversorMonedas.getOpciones();
-			
-			//conversorMonedas.operacion(0);
-			
-			JOptionPane.showMessageDialog(null, conversorMonedas.getResultado());
-			
-		}
+			String dato = JOptionPane.showInputDialog(null, "Ingrese la cantidad que desea convertir");
 
-		if (opcion == "Conversor de Temperatura") {
+			if (seleccion == "Conversor de moneda") {
+				
+				MetodosMonedas conversorMonedas = new MetodosMonedas(dato);
+				//System.out.println(JOptionPane.showConfirmDialog(null,"¿Desea Continuar?"));
 
-			CalculosTemperatura conversorTemperaturas = new CalculosTemperatura();
-			conversorTemperaturas.getOpciones();
+			}
+
 			
+			if (seleccion == "Conversor de Temperatura") {
+
+				CalculosTemperatura conversorTemperaturas = new CalculosTemperatura();
+				conversorTemperaturas.getOpciones();
+
+			}
 			
+			inicio = JOptionPane.showConfirmDialog(null,"¿Desea Continuar?");
 			
-			
-			
-		}
+		}	
 
 	}
 
