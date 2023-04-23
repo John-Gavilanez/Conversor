@@ -1,48 +1,63 @@
 package ConversorMonedas;
 
-public class CalculoMonedas{
+public class CalculoMonedas {
 
-	double valor;
-	double resultado;
-	
-	public CalculoMonedas(String opcion, double dato){
-		
-		valor =dato;
-		
-		if (opcion=="De Dólar a Euros") {
-			
-			System.out.println(opcion);
-			
+	private double dato;
+	private double resultado;
+	private String tipo;
+
+	public CalculoMonedas(String dato, String tipo) {
+		this.dato = Double.valueOf(dato);
+		this.tipo = tipo;
+	}
+
+	public void DolarEuros() {
+
+		if (tipo == "De Dólar a Euros") {
+			this.resultado = this.dato * 0.90;
 		}
-		
-	}
-	
-	
-	public double getValor() {
-		return valor;
+
+		if (tipo == "De Euros a Dólar") {
+			this.resultado = this.dato * 1.11;
+		}
 	}
 
-	public void setValor(double valor) {
-		this.valor = valor;
+	public void DolarLibrasEsterlinas() {
+
+		if (tipo == "De Dólar a Libras Esterlinas") {
+			this.resultado = this.dato * 0.80;
+		}
+
+		if (tipo == "De Libras Esterlinas a Dólar") {
+			this.resultado = this.dato * 1.24;
+		}
+
+	}
+
+	public void DolarYenJapones() {
+
+		if (tipo == "De Dólar a Yen Japonés") {
+			this.resultado = this.dato * 134.17;
+			System.out.println(tipo);
+		}
+
+		if (tipo == "De Yen Japonés a Dólar") {
+			this.resultado = this.dato * 0.0075;
+			System.out.println(tipo);
+		}
+
+	}
+
+	public void DolarWonsurcoreano() {
+		this.resultado = this.dato * 1330.37;
 	}
 
 	public double getResultado() {
-		
-		this.resultado = Double.valueOf(valor)*50;
-		
 		return resultado;
 	}
 
 	public void setResultado(double resultado) {
 		this.resultado = resultado;
 	}
-	
-		//if (moneda.getLista()=="De Dólar a Euros") {
-			
-			//moneda.operacion(Double.valueOf(moneda.getValor()));
-			
-			
-		//}
-		
-	
+
 }

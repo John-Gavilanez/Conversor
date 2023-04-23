@@ -20,18 +20,13 @@ public class Inicio {
 			String dato = JOptionPane.showInputDialog(null, "Ingrese la cantidad que desea convertir");
 
 			if (seleccion == "Conversor de moneda") {
-				
 				MetodosMonedas conversorMonedas = new MetodosMonedas(dato);
-				//System.out.println(JOptionPane.showConfirmDialog(null,"¿Desea Continuar?"));
-
 			}
 
 			
 			if (seleccion == "Conversor de Temperatura") {
-
 				CalculosTemperatura conversorTemperaturas = new CalculosTemperatura();
 				conversorTemperaturas.getOpciones();
-
 			}
 			
 			inicio = JOptionPane.showConfirmDialog(null,"¿Desea Continuar?");
