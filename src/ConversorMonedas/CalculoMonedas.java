@@ -14,22 +14,22 @@ public class CalculoMonedas {
 	public void DolarEuros() {
 
 		if (tipo == "De Dólar a Euros") {
-			this.resultado = this.dato * 0.90;
+			this.resultado = (double) Math.round((this.dato * 0.9067) * 100000d) / 100000;
 		}
 
 		if (tipo == "De Euros a Dólar") {
-			this.resultado = this.dato * 1.11;
+			this.resultado = (double) Math.round((this.dato * 1.1024) * 100000d) / 100000;
 		}
 	}
 
 	public void DolarLibrasEsterlinas() {
 
 		if (tipo == "De Dólar a Libras Esterlinas") {
-			this.resultado = this.dato * 0.80;
+			this.resultado = (double) Math.round((this.dato * 0.8002) * 100000d) / 100000;
 		}
 
 		if (tipo == "De Libras Esterlinas a Dólar") {
-			this.resultado = this.dato * 1.24;
+			this.resultado = (double) Math.round((this.dato * 1.2498) * 100000d) / 100000;
 		}
 
 	}
@@ -37,19 +37,25 @@ public class CalculoMonedas {
 	public void DolarYenJapones() {
 
 		if (tipo == "De Dólar a Yen Japonés") {
-			this.resultado = this.dato * 134.17;
-			System.out.println(tipo);
+			this.resultado = (double) Math.round((this.dato * 134.0205) * 100000d) / 100000;
 		}
 
 		if (tipo == "De Yen Japonés a Dólar") {
-			this.resultado = this.dato * 0.0075;
-			System.out.println(tipo);
+			this.resultado = (double) Math.round((this.dato * 0.0075) * 100000d) / 100000;
 		}
 
 	}
 
 	public void DolarWonsurcoreano() {
-		this.resultado = this.dato * 1330.37;
+
+		if (tipo == "De Dólar a Won sur-coreano") {
+			this.resultado = (double) Math.round((this.dato * 1339.5650) * 100000d) / 100000;
+		}
+
+		if (tipo == "De Won sul-coreano a Dólar") {
+			this.resultado = (double) Math.round((this.dato * 0.00075) * 100000d) / 100000;
+		}
+
 	}
 
 	public double getResultado() {

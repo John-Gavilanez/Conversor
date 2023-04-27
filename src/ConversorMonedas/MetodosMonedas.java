@@ -46,56 +46,56 @@ public class MetodosMonedas {
 		case 0:
 
 			calculo.DolarEuros();
-			JOptionPane.showMessageDialog(null, calculo.getResultado());
+			JOptionPane.showMessageDialog(null, "Tienes € " + calculo.getResultado() + " Euros");
 
 			break;
 
 		case 1:
 
 			calculo.DolarLibrasEsterlinas();
-			JOptionPane.showMessageDialog(null, calculo.getResultado());
+			JOptionPane.showMessageDialog(null, "Tienes £ " + calculo.getResultado() + " Libras Esterlinas");
 
 			break;
 
 		case 2:
 
 			calculo.DolarYenJapones();
-			JOptionPane.showMessageDialog(null, calculo.getResultado());
+			JOptionPane.showMessageDialog(null, "Tienes ¥ " + calculo.getResultado() + " Yen Japonés");
 
 			break;
 
 		case 3:
 
 			calculo.DolarWonsurcoreano();
-			JOptionPane.showMessageDialog(null, calculo.getResultado());
+			JOptionPane.showMessageDialog(null, "Tienes ₩ " + calculo.getResultado() + " Won Surcoreano");
 
 			break;
 
 		case 4:
 
 			calculo.DolarEuros();
-			JOptionPane.showMessageDialog(null, calculo.getResultado());
+			JOptionPane.showMessageDialog(null, "Tienes $ " + calculo.getResultado() + " Dólares");
 
 			break;
 
 		case 5:
 
 			calculo.DolarLibrasEsterlinas();
-			JOptionPane.showMessageDialog(null, calculo.getResultado());
+			JOptionPane.showMessageDialog(null, "Tienes $ " + calculo.getResultado() + " Dólares");
 
 			break;
 
 		case 6:
 
 			calculo.DolarYenJapones();
-			JOptionPane.showMessageDialog(null, calculo.getResultado());
+			JOptionPane.showMessageDialog(null, "Tienes $ " + calculo.getResultado() + " Dólares");
 
 			break;
 
 		case 7:
 
 			calculo.DolarWonsurcoreano();
-			JOptionPane.showMessageDialog(null, calculo.getResultado());
+			JOptionPane.showMessageDialog(null, "Tienes $ " + calculo.getResultado() + " Dólares");
 
 			break;
 
