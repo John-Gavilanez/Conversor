@@ -19,7 +19,7 @@ public class Inicio {
 
 				seleccion = (JOptionPane.showInputDialog(null, "Seleccione el tipo de conversor", "Conversor",
 						JOptionPane.PLAIN_MESSAGE, null,
-						new Object[] { "Conversor de moneda", "Conversor de Temperatura" }, "selecciopna")).toString();
+						new Object[] { "Conversor de moneda", "Conversor de Temperatura" }, "selecciona")).toString();
 
 				dato = JOptionPane.showInputDialog(null, "Ingrese la cantidad que desea convertir");
 
