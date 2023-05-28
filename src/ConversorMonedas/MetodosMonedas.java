@@ -38,13 +38,13 @@ public class MetodosMonedas {
 		ListaA.add(String.valueOf(lista[5]));
 		ListaA.add(String.valueOf(lista[6]));
 		ListaA.add(String.valueOf(lista[7]));
-
+		
 		int op = Integer.valueOf(ListaA.indexOf(opcion));
 
 		switch (op) {
 
 		case 0:
-
+			
 			calculo.DolarEuros();
 			JOptionPane.showMessageDialog(null, "Tienes € " + calculo.getResultado() + " Euros");
 

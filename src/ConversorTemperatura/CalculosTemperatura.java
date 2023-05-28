@@ -1,35 +1,62 @@
 package ConversorTemperatura;
 
-import javax.swing.JOptionPane;
-
 public class CalculosTemperatura {
 	
-	String opciones;
+	private double dato;
+	private double resultado;
+	private String tipo;
 
-	public String getOpciones() {
-		
-		Object[] opConversion = new Object[6];
+	public CalculosTemperatura(String dato, String tipo) {
+		this.dato = Double.valueOf(dato);
+		this.tipo = tipo;
 
-		opConversion [0] = "De Celsius a Fahrenheit";
-		opConversion [1] = "De Celsius a Kelvin";
-		opConversion [2] = "De Fahrenheit a Celsius";
-		opConversion [3] = "De Fahrenheit a Kelvin";
-		opConversion [4] = "De Kelvin a Celsius";
-		opConversion [5] = "De Kelvin a Fahrenheit";
-		
-		
-		String lista = (JOptionPane.showInputDialog(null, "Eleija la moneda a la que desea convertir su dinero",
-				"Monedas", JOptionPane.PLAIN_MESSAGE, null, opConversion, "Selecciona")).toString();
-
-		
-		return opciones;
 	}
 
-	public void setOpciones(String opciones) {
-		this.opciones = opciones;
+	public void CelsiusFahrenheit() {
+		
+		if (tipo =="De Celsius a Fahrenheit") {
+			this.resultado = (double) Math.round(((this.dato * 9/5) + 32) * 100000d) / 100000;
+		}
+		
+		if (tipo=="De Fahrenheit a Celsius") {
+			this.resultado = (double) Math.round(((this.dato - 32)* 5/9) * 100000d) / 100000;
+		}
+	}
+
+	public void CelsiusKelvin() {
+		
+		if (tipo =="De Celsius a Kelvin") {
+			this.resultado = (double) Math.round((this.dato + 273.15) * 100000d) / 100000;
+		}
+		
+		if (tipo =="De Kelvin a Celsius") {
+			this.resultado = (double) Math.round((this.dato - 273.15) * 100000d) / 100000;
+		}
+	}
+
+	public void FahrenheitKelvin() {
+		
+		if (tipo =="De Fahrenheit a Kelvin") {
+			this.resultado = (double) Math.round((((5*(this.dato-32))/9) + 273.15) * 100000d) / 100000;
+		}
+		
+		if (tipo =="De Kelvin a Fahrenheit") {
+			this.resultado = (double) Math.round((((9*(this.dato - 273.15))/5)+32) * 100000d) / 100000;
+		}
+		
+	}
+	
+	public double getResultado() {
+		return resultado;
+	}
+
+	public void setResultado(double resultado) {
+		this.resultado = resultado;
 	}
 	
 	
 	
+
+
 
 }

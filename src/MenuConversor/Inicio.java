@@ -4,6 +4,7 @@ import javax.swing.JOptionPane;
 
 import ConversorMonedas.MetodosMonedas;
 import ConversorTemperatura.CalculosTemperatura;
+import ConversorTemperatura.MetodoTemperatura;
 
 public class Inicio {
 
@@ -16,29 +17,26 @@ public class Inicio {
 		while (inicio == 0) {
 
 			try {
-
 				seleccion = (JOptionPane.showInputDialog(null, "Seleccione el tipo de conversor", "Conversor",
 						JOptionPane.PLAIN_MESSAGE, null,
 						new Object[] { "Conversor de moneda", "Conversor de Temperatura" }, "selecciona")).toString();
 
 				dato = JOptionPane.showInputDialog(null, "Ingrese la cantidad que desea convertir");
 
-				if (seleccion == "Conversor de moneda" && Double.valueOf(dato) >= 0) {
-					MetodosMonedas conversorMonedas = new MetodosMonedas(dato);
+				if (Double.valueOf(dato) >= 0) {
+					if (seleccion == "Conversor de moneda") {
+						MetodosMonedas conversorMonedas = new MetodosMonedas(dato);
+					}
+					
+					if (seleccion == "Conversor de Temperatura") {
+						MetodoTemperatura conversorTemperatura = new MetodoTemperatura(dato);
+					}
 				}
 
 				else {
-
 					JOptionPane.showMessageDialog(null, "Usted ha ingresado valores negativos", "title",
 							JOptionPane.ERROR_MESSAGE);
-
 				}
-
-				if (seleccion == "Conversor de Temperatura") {
-					CalculosTemperatura conversorTemperaturas = new CalculosTemperatura();
-					conversorTemperaturas.getOpciones();
-				}
-
 			}
 
 			catch (NullPointerException e) {
